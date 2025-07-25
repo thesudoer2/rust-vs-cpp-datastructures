@@ -15,7 +15,7 @@ impl MyRand {
 
 fn main() {
     let mut rand = MyRand::default();
-    let mut hashset = HashSet::new();
+    let mut hashset = HashSet::with_capacity(2_000_000);
     for _ in 0..1_000_000 {
         hashset.insert(rand.next());
     }
