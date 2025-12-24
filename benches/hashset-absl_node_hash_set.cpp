@@ -24,8 +24,8 @@ struct MyRand {
 
 int main() {
     MyRand rand{};
-    absl::node_hash_set<std::uint64_t> hashset(2'000'000);
-    for (int _: std::views::iota(0, 1'000'000)) {
+    absl::node_hash_set<std::uint64_t> hashset(20'000'000);
+    for (int _: std::views::iota(0, 10'000'000)) {
         hashset.insert(rand.next());
     }
     std::cout << hashset.size() << std::endl;

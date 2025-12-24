@@ -25,9 +25,9 @@ struct MyRand {
 int main() {
     MyRand rand{};
     // std::unordered_set<std::uint64_t> hashset;
-    std::unordered_set<std::uint64_t, absl::Hash<std::uint64_t>> hashset(2'000'000);
+    std::unordered_set<std::uint64_t, absl::Hash<std::uint64_t>> hashset(20'000'000);
     // for (int _ : std::views::iota(0, 1'000'000)) {
-    for (int i {}; i < 1'000'000; ++i) {
+    for (int i {}; i < 10'000'000; ++i) {
         hashset.insert(rand.next());
     }
     std::cout << hashset.size() << std::endl;
